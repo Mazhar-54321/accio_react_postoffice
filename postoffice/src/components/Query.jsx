@@ -11,7 +11,7 @@ const Query = ({data,pincode,goback}) => {
        {
         <div style={{display:'flex',flexWrap:'wrap',rowGap:'10px',columnGap:'10px'}}>
             {data?.[0]?.PostOffice?.filter((el)=>el?.Name?.trim()?.toLowerCase()?.includes(filter?.trim()?.toLowerCase()))?.map((el)=>(
-                <div style={{width:'300px',height:'300px',border:'1px solid black',padding:'10px'}}>
+                <div key={el?.Name} style={{width:'300px',height:'300px',border:'1px solid black',padding:'10px'}}>
                     <p>Name:{el?.Name}</p>
                     <p>Branch Type:{el?.BranchType}</p>
                     <p>Dellivery Status:{el?.DeliveryStatus}</p>
